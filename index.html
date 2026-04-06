@@ -18,15 +18,8 @@ body {
   padding: 30px 20px;
 }
 
-h2 {
-  font-size: 24px;
-  line-height: 1.4;
-}
-
-h3 {
-  font-size: 20px;
-  line-height: 1.4;
-}
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
 
 p {
   font-size: 18px;
@@ -40,8 +33,7 @@ button {
   font-size: 18px;
   border-radius: 12px;
   border: none;
-  background: #ffffff;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background: white;
 }
 
 img {
@@ -55,6 +47,11 @@ img {
 <body>
 
 <div class="container" id="app"></div>
+
+<!-- Musik -->
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 let step = -1;
@@ -78,8 +75,13 @@ document.getElementById("app").innerHTML = `
 <p>Si quieres podemos ir juntos esta tarde al Luna Park Fribourg.</p>
 <p>Pero antes debes resolver este quiz 😄</p>
 <p>Mamá seguro que puede ayudarte.</p>
-<button onclick="next()">Empezar</button>
+<button onclick="startQuiz()">Empezar</button>
 `;
+}
+
+function startQuiz() {
+document.getElementById("music").play();
+next();
 }
 
 function next() {
@@ -110,7 +112,7 @@ document.getElementById("app").innerHTML = `
 <p>Te quiero muchísimo 💖</p>
 <p>¡Diviértete en el Luna Park! 🎢</p>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Trampoline.jpg">
+<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
 `;
 }
 
